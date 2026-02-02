@@ -1,501 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="lv">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Eksāmenu palīgs 9. klasei — Grupas projekts</title>
+<meta charset="UTF-8">
+<title>9. klases eksāmenu palīgs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-  :root{--accent:#1e88e5;--muted:#666;--card:#fff;--bg:#f5f7fb}
-  *{box-sizing:border-box}
-  body{font-family:Arial,system-ui,-apple-system; margin:0; background:var(--bg); color:#111}
-  header{background:linear-gradient(90deg,#0d47a1 0%, #1976d2 100%); color:#fff; padding:20px}
-  .container{max-width:1100px;margin:20px auto;padding:0 16px}
-  h1,h2{margin:0 0 8px 0}
-  p.lead{margin:4px 0 12px;color:#e8f1ff}
-  nav.topnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-  .btn{background:#fff;color:#0d47a1;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
-  .search{display:flex;gap:8px;margin:18px 0}
-  input[type="search"]{flex:1;padding:10px;border-radius:10px;border:1px solid #ccc}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 2px 6px rgba(20,20,20,0.06)}
-  .topic-title{display:flex;justify-content:space-between;align-items:center}
-  .tags{font-size:13px;color:var(--muted)}
-  details{margin-top:8px}
-  .cheatsheet{background:#fff8e1;padding:12px;border-radius:8px}
-  footer{text-align:center;color:var(--muted);padding:20px 0;margin-top:20px}
-  .quiz-result{font-weight:700;margin-top:8px}
-  .big-note{background:#e3f2fd;padding:10px;border-radius:8px;margin-bottom:14px}
-  .nav-list{display:flex;gap:8px;flex-wrap:wrap}
-  .chip{background:#e8f0ff;padding:6px 10px;border-radius:999px;font-weight:600;color:#0d47a1}
-  .btn-primary{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none}
-  .small{font-size:13px;color:var(--muted)}
-  .printable{margin-top:10px;padding:10px;background:#fff;border-radius:8px}
-  .score-badge{background:#c8e6c9;padding:6px 8px;border-radius:6px}
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f4f6fa;
+  color:#111;
+}
+header{
+  background:#1e3a8a;
+  color:white;
+  padding:20px;
+}
+section{
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-radius:10px;
+}
+h2{color:#1e3a8a}
+button{
+  padding:10px 16px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+button:hover{background:#1d4ed8}
+.quiz-box{
+  margin-top:15px;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+.correct{color:green}
+.wrong{color:red}
+.explain{
+  font-size:14px;
+  color:#444;
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="container">
-    <h1>Eksāmenu palīgs 9. klasei</h1>
-    <p class="lead">Sakārtotas tēmas, atgādnes (formulas/likumi), interaktīvi testi un ātra meklēšana. Izveidoja Kristiāns Biliūns palīdzēja Toms Antoņuks un Everts Akermans</p>
-    <div class="nav-list">
-      <span class="chip">Mērķis: paaugstināt rezultātus</span>
-      <span class="chip">Mērķauditorija: Latvijas 9. klases skolēni</span>
-      <a class="btn" href="#topics">Sākt</a>
-      <a class="btn" href="#cheatsheet">Atgādne</a>
-      <a class="btn" href="#quizzes">Testi</a>
-    </div>
-  </div>
+  <h1>9. klases eksāmenu palīgs</h1>
+  <p>Tikai tas, kas tiešām būs eksāmenā</p>
 </header>
 
-<main class="container">
-  <section id="outline" class="card" style="margin-top:-40px">
-    <h2>Projekta kopsavilkums</h2>
-    <p><strong>Problēma:</strong> skolēniem nav vienotas, ērti pieejamas mājaslapas ar sakārtotām 9. klases tēmām un atgādnēm, kas ļautu vieglāk sagatavoties eksāmeniem.</p>
-    <p><strong>Galvenās funkcijas:</strong> tēmu katalogs, ātra meklēšana, detalizētas atgādnes, interaktīvi testi, rezultātu uzskaite, printable "cheatsheet".</p>
-    <p><strong>Tehniskais plāns (īsi):</strong> HTML — struktūra un sadaļas; CSS — responsīvs dizains un drukas formāts; JavaScript — meklēšana, testi, rezultātu uzskaite (localStorage).</p>
-    <p><strong>Wow:</strong> interaktīvs tests ar tūlītēju analīzi un rezultātu saglabāšanu.</p>
-  </section>
+<section>
+<h2>📐 Matemātika – pilna atgādne</h2>
+<ul>
+<li>Kvadrātvienādojums: ax² + bx + c = 0</li>
+<li>Diskriminants: D = b² − 4ac</li>
+<li>Procenti: daļa = (procents / 100) × kopums</li>
+<li>Pitagora teorēma: a² + b² = c²</li>
+<li>sin²x + cos²x = 1</li>
+</ul>
 
-  <section id="controls" style="margin-top:18px" class="card">
-    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-      <div style="flex:1">
-        <input id="searchBox" type="search" placeholder="Meklēt pēc tēmas (piem. trigonometria, valoda, vēsture...)" />
-      </div>
-      <div>
-        <button class="btn-primary" id="btnShowAll">Rādīt visas tēmas</button>
-      </div>
-    </div>
-    <div class="big-note">
-      <strong>Padoms:</strong> izmanto meklēšanu, ja gribi ātri atrast tēmu. Testi pie katras tēmas palīdz sagatavoties eksāmenam.
-    </div>
-  </section>
+<button onclick="startQuiz('math')">Sākt matemātikas testu</button>
+</section>
 
-  <section id="topics" style="margin-top:18px">
-    <h2>Tēmas pa priekšmetiem (9. klase)</h2>
-    <div class="grid" id="topicsGrid">
-      <!-- TEMA: Matemātika -->
-      <div class="card topic" data-keywords="matematika algebra trigonometria funkcijas skaitļi procenti vienādojumi">
-        <div class="topic-title">
-          <strong>Matemātika — svarīgākās tēmas</strong>
-          <span class="tags">Algebrā, ģeometrija, trigonometria</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Algebra</h3>
-            <p>Lineārie vienādojumi, kvadrātvienādojumi, faktorizācija, polinomi.</p>
-            <h3>2) Funkcijas un grafiki</h3>
-            <p>Lineāro, kvadrātisko funkciju grafiki, saknes, maksimums/minimums.</p>
-            <h3>3) Trigonometria</h3>
-            <p>sin, cos, tan; vienādojumi; Pitagora; vienkārša leņķu ķēde.</p>
-            <h3>4) Procenti un attiecības</h3>
-            <p>Procentu aprēķini, procentu pieaugums/krīze.</p>
-            <div class="cheatsheet" style="margin-top:8px">
-              <strong>Galvenās formulas:</strong>
-              <ul>
-                <li>Pitagora: a² + b² = c²</li>
-                <li>Kvadrātvienādojuma risināšana: x = (−b ± √(b²−4ac))/(2a)</li>
-                <li>Trig.: sin²x + cos²x = 1</li>
-                <li><b>Matemātika – skaitļu kopas:</b> naturālie, veselie, racionālie un iracionālie skaitļi.</li>
-<li><b>Procenti:</b> procenti nozīmē “daļa no 100”. Formula: daļa = (p/100) × skaitlis.</li>
-<li><b>Pitagora teorēma:</b> taisnleņķa trijstūrī a² + b² = c².</li>
-<li><b>Trijstūra laukums:</b> S = (a × h) / 2.</li>
-<li><b>Apļa laukums:</b> S = π × r².</li>
+<section>
+<h2>📖 Latviešu valoda – pilna atgādne</h2>
+<ul>
+<li>Teikuma locekļi: subjekts, predikāts, papildinātājs</li>
+<li>Salikti teikumi – ar saikļiem</li>
+<li>Divdabji un to pareiza lietošana</li>
+<li>Esejas struktūra: ievads – pamatojums – secinājums</li>
+<li>Komatu lietošana palīgteikumos</li>
+</ul>
 
-<li><b>Lietvārdi:</b> nosauc priekšmetus, personas, parādības.</li>
-<li><b>Darbības vārdi:</b> nosauc darbību vai stāvokli.</li>
-<li><b>Īpašības vārdi:</b> raksturo priekšmetu pazīmes.</li>
-<li><b>Metafora:</b> pārnesta nozīme (piemērs: “zelta rokas”).</li>
-<li><b>Personifikācija:</b> nedzīvam piešķir dzīvas īpašības.</li>
+<button onclick="startQuiz('lv')">Sākt latviešu valodas testu</button>
+</section>
 
-<li><b>Latvijas valsts dibināšana:</b> 18.11.1918.</li>
-<li><b>Satversme:</b> Latvijas pamatlikums, pieņemta 1922. gadā.</li>
-<li><b>Baltijas ceļš:</b> 1989. gada cilvēku ķēde cauri Baltijai.</li>
-<li><b>Neatkarības atjaunošana:</b> 1990. gads.</li>
-
-<li><b>Ātruma formula:</b> v = s / t.</li>
-<li><b>Blīvums:</b> ρ = m / V.</li>
-<li><b>Spēks:</b> F = m × a.</li>
-<li><b>Inerce:</b> ķermeņa tieksme saglabāt kustības vai miera stāvokli.</li>
-<li><b>Atoms:</b> mazākā vielas daļiņa, kas saglabā tās īpašības.</li>
-
-              </ul>
-            </div>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('math')">Sākt testa sadaļu (Matemātika)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- TEMA: Latviešu valoda -->
-      <div class="card topic" data-keywords="latviešu valoda valoda gramatika sintakse literatūra eseja">
-        <div class="topic-title">
-          <strong>Latviešu valoda</strong>
-          <span class="tags">Gramatika, teksta izpratne, eseja</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Teikuma locekļi</h3>
-            <p>Subjekts, predikāts, objekts, papildinājumi — atpazīšana.</p>
-            <h3>2) Lietvārdi, darbības vārdi, īpašības vārdi</h3>
-            <p>Dažādas locīšanas tabulas, galvenie noteikumi.</p>
-            <h3>3) Teksta analīze</h3>
-            <p>Kā strukturēt eseju; argumenti, ievads, secinājums.</p>
-            <h3>4) Ortogrāfija</h3>
-            <p>Svarīgākie pareizrakstības noteikumi.</p>
-
-            <div class="cheatsheet" style="margin-top:8px">
-              <strong>Padomi eseju rakstīšanai:</strong>
-              <ul>
-                <li>Skaidrs ievads un secinājumi</li>
-                <li>Atbalstīt apgalvojumus ar piemēriem</li>
-                <li>Izmantot saikļus (turklāt, tomēr, tāpēc)</li>
-              </ul>
-            </div>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('lv')">Sākt testa sadaļu (Latviešu)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- TEMA: Vēsture -->
-      <div class="card topic" data-keywords="vēsture latvija pasaule 20.gadsimts revolūcijas karš">
-        <div class="topic-title">
-          <strong>Vēsture</strong>
-          <span class="tags">Latvijas un pasaules vēsture</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Latvijas vēsture</h3>
-            <p>No viduslaikiem līdz 20. gadsimtam, neatkarības gājieni, 20. gs. notikumi.</p>
-            <h3>2) Eiropas un pasaules vēsture</h3>
-            <p>Industriālā revolūcija, Pirmais un Otrais pasaules karš, aukstais karš.</p>
-
-            <div class="cheatsheet" style="margin-top:8px">
-              <strong>Svarīgākie datumi (piemēri):</strong>
-              <ul>
-                <li>1918 — Latvijas Republikas proklamēšana</li>
-                <li>1940–1991 — okupācijas periods</li>
-              </ul>
-            </div>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('history')">Sākt testa sadaļu (Vēsture)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- TEMA: Fizika -->
-      <div class="card topic" data-keywords="fizika vienādojumi spēks enerģija ķermeņi formula">
-        <div class="topic-title">
-          <strong>Fizika</strong>
-          <span class="tags">Kinemātika, dinamika, enerģija</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Kinemātika</h3>
-            <p>Ātrums, paātrinājums, vienmērīgs un vienmērīgi mainīgs kustību aprēķins.</p>
-            <h3>2) Dinamika</h3>
-            <p>Njutona likumi, spēks un masa: F = m*a</p>
-            <h3>3) Enerģija</h3>
-            <p>Kinetiskā un potenciālā enerģija, darba aprēķins.</p>
-
-            <div class="cheatsheet" style="margin-top:8px">
-              <ul>
-                <li>F = m·a</li>
-                <li>W = F·s</li>
-                <li>E_k = ½·m·v²</li>
-              </ul>
-            </div>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('physics')">Sākt testa sadaļu (Fizika)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- TEMA: Ģeogrāfija -->
-      <div class="card topic" data-keywords="ģeogrāfija klimats kartes reģioni resursi">
-        <div class="topic-title">
-          <strong>Ģeogrāfija</strong>
-          <span class="tags">Dabas un cilvēka ģeogrāfija</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Kartogrāfija</h3>
-            <p>Kartes veidi, mērogs, koordinātas.</p>
-            <h3>2) Klimats un ekosistēmas</h3>
-            <p>Galvenie klimata tipi, resursu izmantošana.</p>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('geo')">Sākt testa sadaļu (Ģeogrāfija)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- TEMA: Bioloģija -->
-      <div class="card topic" data-keywords="bioloģija organisma uzbūve ekoloģija šūna DNS">
-        <div class="topic-title">
-          <strong>Bioloģija</strong>
-          <span class="tags">Šūna, orgānu sistēmas, ekoloģija</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Šūna un organismi</h3>
-            <p>Šūnas uzbūve, fotosintēze, DNS pamati.</p>
-            <h3>2) Ekoloģija</h3>
-            <p>Ķēdes, biotopi, cilvēka ietekme uz vidi.</p>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('bio')">Sākt testa sadaļu (Bioloģija)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- TEMA: Angļu valoda -->
-      <div class="card topic" data-keywords="angļu valoda grammar vocabulary reading writing">
-        <div class="topic-title">
-          <strong>Angļu valoda</strong>
-          <span class="tags">Gramatika, lasīšana, vārdu krājums</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Gramatika</h3>
-            <p>Laiki, salikti teikumi, modālie vārdi.</p>
-            <h3>2) Lasīšana un klausīšanās</h3>
-            <p>Tekstu analīze, galveno domu noteikšana.</p>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('eng')">Sākt testa sadaļu (Angļu)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <!-- PAPILDUS: ķīmija -->
-      <div class="card topic" data-keywords="ķīmija atoms molekulas reakcijas periodiskā tabula">
-        <div class="topic-title">
-          <strong>Ķīmija (ievads)</strong>
-          <span class="tags">Atoms, reakcijas, periodiskā tabula</span>
-        </div>
-        <details>
-          <summary>Atvērt tēmas</summary>
-          <div style="margin-top:8px">
-            <h3>1) Atomu uzbūve</h3>
-            <p>Elektroni, protoni, neitroni, elektronu konfigurācija.</p>
-            <h3>2) Reakcijas un vienādojumi</h3>
-            <p>Kā balansēt ķīmiskos vienādojumus, redoks reakcijas.</p>
-
-            <div style="margin-top:10px">
-              <button class="btn" onclick="startQuiz('chem')">Sākt testa sadaļu (Ķīmija)</button>
-            </div>
-          </div>
-        </details>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="cheatsheet" style="margin-top:20px" class="card">
-    <h2>Atgādne (Cheat-sheet) — Ātri svarīgākās formulas un noteikumi</h2>
-    <div class="printable">
-      <h3>Matemātika</h3>
-      <ul>
-        <li>Pitagora: a² + b² = c²</li>
-        <li>Kvadrātvienādojuma formula: x = (−b ± √(b²−4ac))/(2a)</li>
-        <li>Sin/Cos/Tan definīcijas trijstūrī</li>
-      </ul>
-      <h3>Fizika</h3>
-      <ul>
-        <li>F = m·a</li>
-        <li>E_k = ½·m·v²</li>
-      </ul>
-      <h3>Latviešu valoda</h3>
-      <ul>
-        <li>Esejas struktūra: Ievads — Saturs — Secinājums</li>
-      </ul>
-      <h3>Vēsture</h3>
-      <ul>
-        <li>1918 — Latvijas Republikas proklamēšana</li>
-      </ul>
-    </div>
-    <p class="small">Izdrukā šo sadaļu pirms eksāmena kā ātro atgādni.</p>
-  </section>
-
-  <section id="quizzes" style="margin-top:20px" class="card">
-    <h2>Interaktīvie testi</h2>
-    <p>Katram priekšmetam īsi testi ar tūlītēju atgriezenisko saiti — katra testa rezultāts tiek saglabāts pārlūkā (localStorage).</p>
-    <div id="quizArea" class="card" style="margin-top:10px;display:none"></div>
-
-    <div style="margin-top:12px">
-      <button class="btn" onclick="showScores()">Skatīt saglabātos rezultātus</button>
-      <div id="scores" style="margin-top:8px"></div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  Projekta nosaukums: <strong>Eksāmenu palīgs 9. klasei</strong> — sagatavots skolēnu grupai. Faila nosaukums: <em>GrupasNosaukums_Eksamenu_paligs_9kl.html</em>
-</footer>
+<section>
+<h2>🧠 Tests</h2>
+<div id="quiz"></div>
+</section>
 
 <script>
-/* ====== Meklēšana ====== */
-const topicsGrid = document.getElementById('topicsGrid');
-const searchBox = document.getElementById('searchBox');
-const btnShowAll = document.getElementById('btnShowAll');
-
-function filterTopics(q){
-  q = q.trim().toLowerCase();
-  const all = Array.from(document.querySelectorAll('.topic'));
-  all.forEach(card=>{
-    const k = card.dataset.keywords || '';
-    if(!q || k.includes(q)) card.style.display = '';
-    else card.style.display = 'none';
-  });
-}
-searchBox.addEventListener('input', e=>filterTopics(e.target.value));
-btnShowAll.addEventListener('click', ()=>{ searchBox.value=''; filterTopics(''); });
-
-/* ====== Testu dati ====== */
-const QUIZZES = {
-  math: {
-    title:'Matemātika',
-    questions:[
-      {q:'Kāds ir Pitagora teikuma pamatīgums?', a:['a²+b²=c²','a+b=c','a²-b²=c²'], correct:0},
-      {q:'Kā risinām kvadrātvienādojumu ax²+bx+c=0?', a:['x=(−b±√(b²−4ac))/(2a)','x=(b±√(b²−4ac))/a','x=(−c±√(c²−4ab))/(2c)'], correct:0}
-    ]
-  },
-  lv: {
-    title:'Latviešu valoda',
-    questions:[
-      {q:'Kas nav teikuma loceklis?', a:['Subjekts','Predikāts','Kapacitāte'], correct:2},
-      {q:'Ko satur laba eseja?', a:['Ievadu, argumentus, secinājumu','Tik skaistus vārdus','Garus teikumus bez domu saskaņas'], correct:0}
-    ]
-  },
-  history:{
-    title:'Vēsture',
-    questions:[
-      {q:'Kurš gads ir Latvijas Republikas proklamēšana?', a:['1918','1945','1991'], correct:0},
-      {q:'Kas bija 20. gs. sākuma nozīmīgs notikums?', a:['Pirmā pasaules kara izcelšanās','Raķešu izgudrošana','Interneta parādīšanās'], correct:0}
-    ]
-  },
-  physics:{
-    title:'Fizika',
-    questions:[
-      {q:'Kāda ir Njutona otrā likuma forma?', a:['F = m·a','E = m·c²','p = m/v'], correct:0},
-      {q:'Kinetiskā enerģija ir...', a:['E_k = ½ m v²','E_k = m g h','E_k = F·s'], correct:0}
-    ]
-  },
-  geo:{title:'Ģeogrāfija', questions:[
-    {q:'Kas ir mērogs kartē?', a:['Attāluma attiecība uz kartes','Karšu izcelsme','Kartes nosaukums'], correct:0}
-  ]},
-  bio:{title:'Bioloģija', questions:[
-    {q:'Kas fotosintēzē rodas kā galvenais produkts?', a:['Glikoze','Skābeklis','Ūdens'], correct:0}
-  ]},
-  eng:{title:'Angļu valoda', questions:[
-    {q:'Kuru laiku izmanto darbībām, kas notiek tagad?', a:['Present Simple','Past Simple','Future Simple'], correct:0}
-  ]},
-  chem:{title:'Ķīmija', questions:[
-    {q:'Kas ir elements?', a:['Viena veida atomi','Sajaukums','Molekula'], correct:0}
-  ]}
+const quizzes = {
+math: [
+ {q:"Aprēķini diskriminantu vienādojumam x² − 5x + 6 = 0",
+  a:["1","25","-1"],
+  c:1,
+  e:"D = (-5)² - 4·1·6 = 25 - 24 = 1"},
+ {q:"Cik ir 20% no 150?",
+  a:["30","20","75"],
+  c:0,
+  e:"20% = 0.2, tātad 0.2 × 150 = 30"},
+ {q:"Ja katetes ir 3 un 4, hipotenūza ir?",
+  a:["5","6","7"],
+  c:0,
+  e:"3² + 4² = 9 + 16 = 25, √25 = 5"}
+],
+lv: [
+ {q:"Kas ir predikāts?",
+  a:["Darbība teikumā","Priekšmets","Apzīmētājs"],
+  c:0,
+  e:"Predikāts nosauc darbību vai stāvokli"},
+ {q:"Kurā teikumā vajag komatu?",
+  a:["Kad līst es palieku mājās","Es eju uz skolu"],
+  c:0,
+  e:"Palīgteikumu atdala ar komatu"},
+ {q:"Kas ir pareiza eseja?",
+  a:["Ar ievadu, pamatojumu un secinājumu","Tikai gari teikumi"],
+  c:0,
+  e:"Esejai ir struktūra"}
+]
 };
 
-/* ====== Testa skats ====== */
-function startQuiz(id){
-  const data = QUIZZES[id];
-  if(!data) return alert('Tests nav pieejams');
-  const quizArea = document.getElementById('quizArea');
-  quizArea.style.display = '';
-  quizArea.innerHTML = '';
-  const title = document.createElement('h3'); title.textContent = data.title;
-  quizArea.appendChild(title);
+function startQuiz(type){
+ const area=document.getElementById("quiz");
+ area.innerHTML="";
+ const questions=[...quizzes[type]].sort(()=>Math.random()-0.5);
 
-  const form = document.createElement('div');
-  data.questions.forEach((qq, idx)=>{
-    const qdiv = document.createElement('div');
-    qdiv.className='card';
-    qdiv.style.marginBottom='8px';
-    qdiv.innerHTML = `<strong>${idx+1}. ${qq.q}</strong>`;
-    qq.a.forEach((opt,i)=>{
-      const idOpt = `q_${id}_${idx}_${i}`;
-      const label = document.createElement('label');
-      label.style.display='block';
-      label.style.marginTop='6px';
-      label.innerHTML = `<input type="radio" name="q${idx}" value="${i}" id="${idOpt}" /> ${opt}`;
-      qdiv.appendChild(label);
-    });
-    form.appendChild(qdiv);
-  });
+ questions.forEach((q,i)=>{
+   const box=document.createElement("div");
+   box.className="quiz-box";
+   box.innerHTML=`<b>${i+1}. ${q.q}</b><br>`;
+   q.a.forEach((opt,j)=>{
+     box.innerHTML+=`
+     <label>
+     <input type="radio" name="q${i}" value="${j}">
+     ${opt}
+     </label><br>`;
+   });
+   area.appendChild(box);
+ });
 
-  const btn = document.createElement('button');
-  btn.className='btn-primary';
-  btn.textContent='Pārbaudīt rezultātu';
-  btn.onclick = ()=>{
-    let score=0;
-    data.questions.forEach((qq, idx)=>{
-      const sel = document.querySelector(`input[name="q${idx}"]:checked`);
-      if(sel && Number(sel.value) === qq.correct) score++;
-    });
-    const total = data.questions.length;
-    const res = document.createElement('div');
-    res.className='quiz-result';
-    res.innerHTML = `Rezultāts: <span class="score-badge">${score}/${total}</span>`;
-    // saglabā localStorage
-    const saved = JSON.parse(localStorage.getItem('exam_helper_scores')||'{}');
-    saved[id] = {score, total, time: new Date().toISOString()};
-    localStorage.setItem('exam_helper_scores', JSON.stringify(saved));
-    // parādi analīzi
-    const analysis = document.createElement('div');
-    analysis.style.marginTop='8px';
-    analysis.innerHTML = `<em>Analīze:</em> Pareizie atbilžu skaitļi redzami šeit: <span class="small">${data.questions.map((qq,i)=>qq.correct+1).join(', ')}</span>`;
-    quizArea.appendChild(res);
-    quizArea.appendChild(analysis);
-  };
-
-  quizArea.appendChild(form);
-  quizArea.appendChild(btn);
-  // uz augšu
-  quizArea.scrollIntoView({behavior:'smooth'});
+ const btn=document.createElement("button");
+ btn.textContent="Pārbaudīt";
+ btn.onclick=()=>{
+   let score=0;
+   questions.forEach((q,i)=>{
+     const sel=document.querySelector(`input[name="q${i}"]:checked`);
+     const box=area.children[i];
+     if(sel && Number(sel.value)===q.c){
+       score++;
+       box.innerHTML+=`<p class="correct">✔ Pareizi</p>`;
+     }else{
+       box.innerHTML+=`<p class="wrong">✘ Nepareizi</p>
+       <p class="explain">${q.e}</p>`;
+     }
+   });
+   area.innerHTML+=`<h3>Rezultāts: ${score}/${questions.length}</h3>`;
+ };
+ area.appendChild(btn);
 }
-
-function showScores(){
-  const scoresDiv = document.getElementById('scores');
-  const saved = JSON.parse(localStorage.getItem('exam_helper_scores')||'{}');
-  if(Object.keys(saved).length===0){
-    scoresDiv.innerHTML = '<div class="small">Nav saglabātu rezultātu.</div>';
-    return;
-  }
-  let out = '<ul>';
-  Object.keys(saved).forEach(k=>{
-    const s = saved[k];
-    out += `<li><strong>${(QUIZZES[k]||{title:k}).title}:</strong> ${s.score}/${s.total} — ${new Date(s.time).toLocaleString()}</li>`;
-  });
-  out += '</ul>';
-  scoresDiv.innerHTML = out;
-}
-
-/* ====== Sāc ar meklēšanu tukšu ====== */
-filterTopics('');
 </script>
+
 </body>
 </html>
-
-
