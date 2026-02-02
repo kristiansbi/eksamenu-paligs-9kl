@@ -4,82 +4,98 @@
 <meta charset="UTF-8">
 <title>9. klases eksāmenu palīgs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
-body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  background:#f4f6fa;
-  color:#111;
-}
-header{
-  background:#1e3a8a;
-  color:white;
-  padding:20px;
-}
-section{
-  background:white;
-  margin:20px;
-  padding:20px;
-  border-radius:10px;
-}
-h2{color:#1e3a8a}
-button{
-  padding:10px 16px;
-  border:none;
-  background:#2563eb;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-}
+body{font-family:Arial;margin:0;background:#f4f6fa}
+header{background:#1e3a8a;color:white;padding:20px}
+section{background:white;margin:20px;padding:20px;border-radius:10px}
+button{padding:8px 14px;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer}
 button:hover{background:#1d4ed8}
-.quiz-box{
-  margin-top:15px;
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:8px;
-}
+.topic{border:1px solid #ddd;padding:10px;border-radius:6px;margin-top:10px}
+.hidden{display:none}
+.quiz-box{margin-top:10px;padding:10px;border:1px solid #ccc;border-radius:6px}
 .correct{color:green}
 .wrong{color:red}
-.explain{
-  font-size:14px;
-  color:#444;
-}
+.small{font-size:14px;color:#444}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>9. klases eksāmenu palīgs</h1>
-  <p>Tikai tas, kas tiešām būs eksāmenā</p>
+<h1>9. klases eksāmenu palīgs</h1>
+<p>Tikai tas, kas tiešām būs eksāmenā</p>
 </header>
 
+<!-- ================= MATEMĀTIKA ================= -->
+
 <section>
-<h2>📐 Matemātika – pilna atgādne</h2>
-<ul>
-<li>Kvadrātvienādojums: ax² + bx + c = 0</li>
-<li>Diskriminants: D = b² − 4ac</li>
-<li>Procenti: daļa = (procents / 100) × kopums</li>
-<li>Pitagora teorēma: a² + b² = c²</li>
-<li>sin²x + cos²x = 1</li>
-</ul>
+<h2>📐 Matemātika</h2>
+<button onclick="toggle('mathTopics')">Mācīties tēmas</button>
+
+<div id="mathTopics" class="hidden">
+
+<div class="topic">
+<b>Kvadrātvienādojumi</b>
+<button onclick="toggle('m1')">Skatīt</button>
+<div id="m1" class="hidden small">
+Kvadrātvienādojuma vispārīgā forma ir ax² + bx + c = 0.  
+Lai to atrisinātu, aprēķina diskriminantu D = b² − 4ac.
+</div>
+</div>
+
+<div class="topic">
+<b>Procenti</b>
+<button onclick="toggle('m2')">Skatīt</button>
+<div id="m2" class="hidden small">
+Procentus aprēķina pēc formulas:  
+daļa = (procents / 100) × kopums
+</div>
+</div>
+
+<div class="topic">
+<b>Pitagora teorēma</b>
+<button onclick="toggle('m3')">Skatīt</button>
+<div id="m3" class="hidden small">
+Taisnleņķa trijstūrī: a² + b² = c²
+</div>
+</div>
+
+</div>
 
 <button onclick="startQuiz('math')">Sākt matemātikas testu</button>
 </section>
 
+<!-- ================= LATVIEŠU ================= -->
+
 <section>
-<h2>📖 Latviešu valoda – pilna atgādne</h2>
-<ul>
-<li>Teikuma locekļi: subjekts, predikāts, papildinātājs</li>
-<li>Salikti teikumi – ar saikļiem</li>
-<li>Divdabji un to pareiza lietošana</li>
-<li>Esejas struktūra: ievads – pamatojums – secinājums</li>
-<li>Komatu lietošana palīgteikumos</li>
-</ul>
+<h2>📖 Latviešu valoda</h2>
+<button onclick="toggle('lvTopics')">Mācīties tēmas</button>
+
+<div id="lvTopics" class="hidden">
+
+<div class="topic">
+<b>Teikuma locekļi</b>
+<button onclick="toggle('l1')">Skatīt</button>
+<div id="l1" class="hidden small">
+Subjekts – kas dara?  
+Predikāts – ko dara?
+</div>
+</div>
+
+<div class="topic">
+<b>Esejas struktūra</b>
+<button onclick="toggle('l2')">Skatīt</button>
+<div id="l2" class="hidden small">
+Eseja sastāv no ievada, pamatojuma un secinājuma.
+</div>
+</div>
+
+</div>
 
 <button onclick="startQuiz('lv')">Sākt latviešu valodas testu</button>
 </section>
+
+<!-- ================= TESTI ================= -->
 
 <section>
 <h2>🧠 Tests</h2>
@@ -87,74 +103,84 @@ button:hover{background:#1d4ed8}
 </section>
 
 <script>
+function toggle(id){
+document.getElementById(id).classList.toggle("hidden");
+}
+
+/* ================== TESTU JAUTĀJUMI ==================
+   ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+   TE TU PATS PIEVIENO JAUTĀJUMUS
+   KOPĒ VIENU BLOKU UN IELĪMĒ ZEMĀK
+====================================================== */
+
 const quizzes = {
 math: [
- {q:"Aprēķini diskriminantu vienādojumam x² − 5x + 6 = 0",
-  a:["1","25","-1"],
-  c:1,
-  e:"D = (-5)² - 4·1·6 = 25 - 24 = 1"},
- {q:"Cik ir 20% no 150?",
-  a:["30","20","75"],
-  c:0,
-  e:"20% = 0.2, tātad 0.2 × 150 = 30"},
- {q:"Ja katetes ir 3 un 4, hipotenūza ir?",
-  a:["5","6","7"],
-  c:0,
-  e:"3² + 4² = 9 + 16 = 25, √25 = 5"}
+{
+q: "Aprēķini diskriminantu vienādojumam x² − 4x + 3 = 0",
+a: ["4","16","-4"],
+c: 0,
+e: "D = (-4)² − 4·1·3 = 16 − 12 = 4"
+},
+
+  {
+q: "izveido reducēto kvadrātvienādojumu, ja dotas tā saknes! (pēc Vjeta teorēmas!): x1=-3 un x2=-7",
+a: ["1+2=4","q= x1*x2 = -3*7 = -21, p = -(x1+x2)= -(-3+7)= -4","q= x1+x2 = -3+7 = -10 p = x1+x2= -3+7 = 4"],
+c: 1,
+e: "Atbilde. Vienādojums, kura saknes ir -3 un -7, ir x²-4x-21=0"
+},
+/* ====== ŠEIT VARI IELĪMĒT JAUNU JAUTĀJUMU ======
+{
+q: "TAVS JAUTĀJUMS ŠEIT",
+a: ["Atbilde1","Atbilde2","Atbilde3"],
+c: 1,
+e: "ŠEIT SKAIDROJUMS"
+},
+================================================ */
+
 ],
+
 lv: [
- {q:"Kas ir predikāts?",
-  a:["Darbība teikumā","Priekšmets","Apzīmētājs"],
-  c:0,
-  e:"Predikāts nosauc darbību vai stāvokli"},
- {q:"Kurā teikumā vajag komatu?",
-  a:["Kad līst es palieku mājās","Es eju uz skolu"],
-  c:0,
-  e:"Palīgteikumu atdala ar komatu"},
- {q:"Kas ir pareiza eseja?",
-  a:["Ar ievadu, pamatojumu un secinājumu","Tikai gari teikumi"],
-  c:0,
-  e:"Esejai ir struktūra"}
+{
+q: "Kas ir predikāts?",
+a: ["Darbība teikumā","Priekšmets","Apzīmētājs"],
+c: 0,
+e: "Predikāts nosauc darbību vai stāvokli"
+}
 ]
 };
 
 function startQuiz(type){
- const area=document.getElementById("quiz");
- area.innerHTML="";
- const questions=[...quizzes[type]].sort(()=>Math.random()-0.5);
+const area=document.getElementById("quiz");
+area.innerHTML="";
+const qs=[...quizzes[type]].sort(()=>Math.random()-0.5);
 
- questions.forEach((q,i)=>{
-   const box=document.createElement("div");
-   box.className="quiz-box";
-   box.innerHTML=`<b>${i+1}. ${q.q}</b><br>`;
-   q.a.forEach((opt,j)=>{
-     box.innerHTML+=`
-     <label>
-     <input type="radio" name="q${i}" value="${j}">
-     ${opt}
-     </label><br>`;
-   });
-   area.appendChild(box);
- });
+qs.forEach((q,i)=>{
+const box=document.createElement("div");
+box.className="quiz-box";
+box.innerHTML=`<b>${i+1}. ${q.q}</b><br>`;
+q.a.forEach((opt,j)=>{
+box.innerHTML+=`<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label><br>`;
+});
+area.appendChild(box);
+});
 
- const btn=document.createElement("button");
- btn.textContent="Pārbaudīt";
- btn.onclick=()=>{
-   let score=0;
-   questions.forEach((q,i)=>{
-     const sel=document.querySelector(`input[name="q${i}"]:checked`);
-     const box=area.children[i];
-     if(sel && Number(sel.value)===q.c){
-       score++;
-       box.innerHTML+=`<p class="correct">✔ Pareizi</p>`;
-     }else{
-       box.innerHTML+=`<p class="wrong">✘ Nepareizi</p>
-       <p class="explain">${q.e}</p>`;
-     }
-   });
-   area.innerHTML+=`<h3>Rezultāts: ${score}/${questions.length}</h3>`;
- };
- area.appendChild(btn);
+const btn=document.createElement("button");
+btn.textContent="Pārbaudīt";
+btn.onclick=()=>{
+let score=0;
+qs.forEach((q,i)=>{
+const sel=document.querySelector(`input[name="q${i}"]:checked`);
+const box=area.children[i];
+if(sel && Number(sel.value)===q.c){
+score++;
+box.innerHTML+=`<p class="correct">✔ Pareizi</p>`;
+}else{
+box.innerHTML+=`<p class="wrong">✘ Nepareizi</p><p class="small">${q.e}</p>`;
+}
+});
+area.innerHTML+=`<h3>Rezultāts: ${score}/${qs.length}</h3>`;
+};
+area.appendChild(btn);
 }
 </script>
 
